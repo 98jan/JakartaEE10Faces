@@ -29,23 +29,18 @@ jobs:
     - name: Build with Maven
       run: mvn clean install -Parq-wildfly-embedded
       
-    - name: Cache SonarCloud packages
-      uses: actions/cache@v1
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
       with:
-        path: ~/.sonar/cache
-        key: ${{ runner.os }}-sonar
-        restore-keys: ${{ runner.os }}-sonar
-    - name: Cache Maven packages
-      uses: actions/cache@v1
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-m2
-    - name: Build and analyze
+        args: >
+          -Dsonar.organization=98jan
+          -Dsonar.projectKey=98jan_jakartaee10faces
+          -Dsonar.java.coverage.reportPaths=jacoco.exec
+          -Dsonar.verbose=true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=98jan_JakartaEE10Faces
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=98jan_JakartaEE10Faces
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
