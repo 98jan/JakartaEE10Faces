@@ -47,7 +47,7 @@
         <wildfly-arquillian.version>5.0.0.Alpha6</wildfly-arquillian.version>
         <!-- websockets-jsr and resteasy for client, aligned with Wildfly version. -->
         <!--rtow-websockets-jsr.version>2.2.17.Final</undertow-websockets-jsr.version-->
-        <resteasy.version>6.0.1.Final</resteasy.version>
+        <resteasy.version>6.2.11.Final</resteasy.version>
 
         <!-- By default, skip tests -->
         <skip.unit.tests>true</skip.unit.tests>
