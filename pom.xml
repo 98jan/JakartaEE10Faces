@@ -43,7 +43,7 @@
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
 
         <!-- Wildfly server -->
-        <wildfly.version>34.0.1.Final</wildfly.version>
+        <wildfly.version>35.0.0.Final</wildfly.version>
         <wildfly-arquillian.version>5.0.1.Final</wildfly-arquillian.version>
         <!-- websockets-jsr and resteasy for client, aligned with Wildfly version. -->
         <!--rtow-websockets-jsr.version>2.2.17.Final</undertow-websockets-jsr.version-->
