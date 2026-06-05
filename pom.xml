@@ -42,7 +42,7 @@
         <assertj.version>3.27.6</assertj.version>
 
         <!-- Jacoco code coverage report -->
-        <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
 
         <!-- Wildfly server -->
         <wildfly.version>37.0.1.Final</wildfly.version>
